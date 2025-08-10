@@ -3,16 +3,28 @@
 import { motion } from "framer-motion";
 
 const skills = [
+  "Python",
+  "JavaScript",
+  "C++",
+  "Django (DRF)",
+  "Flask",
+  "FastAPI",
   "React.js",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Node.js",
-  "UI/UX Design",
-  "Figma",
-  "API Integration",
-  "Performance Optimization",
+  "Electron.js",
+  "TensorFlow",
+  "Scikit-learn",
+  "Pandas",
+  "NumPy",
+  "Selenium",
+  "Puppeteer",
+  "PostgreSQL",
+  "MySQL",
+  "SQLite",
+  "Git",
+  "GitHub",
+  "Vercel",
+  "DigitalOcean",
+  "Supabase",
 ];
 
 export default function SkillsSection() {

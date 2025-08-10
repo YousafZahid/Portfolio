@@ -16,17 +16,17 @@ export default function Home() {
         transition={{ duration: 1 }}
         className="z-10 text-center"
       >
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-yellow-300 drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)] mb-6">
-          Stand Out. <span className="whitespace-nowrap">Be Unforgettable.</span>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-yellow-300 drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)] mb-4">
+          Yousaf Zahid — Full Stack & AI Developer
         </h1>
-        <p className="max-w-xl mx-auto text-lg md:text-2xl text-gray-200 mb-8">
-          I craft digital experiences that captivate, inspire, and convert. Let’s build something extraordinary together.
+        <p className="max-w-2xl mx-auto text-lg md:text-2xl text-gray-200 mb-8">
+          Helping Businesses & Individuals Build High-Impact Websites, AI Tools & Automation Solutions
         </p>
         <a
           href="#contact"
           className="inline-block px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-yellow-500 text-white font-bold text-lg shadow-lg hover:scale-105 hover:shadow-2xl transition-transform duration-300"
         >
-          Work With Me
+          Let&apos;s Build Something Amazing
         </a>
       </motion.div>
       <motion.div
