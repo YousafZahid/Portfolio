@@ -50,7 +50,7 @@ export default function ContactSection() {
           {state.submitting ? "Sending..." : "Send Message"}
         </button>
         {state.succeeded && (
-          <p className="text-green-400 text-center mt-4">Thank you for reaching out! I'll get back to you soon.</p>
+          <p className="text-green-400 text-center mt-4">Thank you for reaching out! I&apos;ll get back to you soon.</p>
         )}
       </motion.form>
     </Section>

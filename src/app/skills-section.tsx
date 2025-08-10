@@ -19,7 +19,7 @@ export default function SkillsSection() {
   return (
     <Section id="skills" title="Skills">
       <div className="flex flex-wrap gap-4 justify-center">
-        {skills.map((skill, idx) => (
+        {skills.map((skill) => (
           <motion.div
             key={skill}
             whileHover={{ scale: 1.1 }}
