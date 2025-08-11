@@ -10,28 +10,47 @@ const skills = [
   "Flask",
   "FastAPI",
   "React.js",
-  "Electron.js",
-  "TensorFlow",
-  "Scikit-learn",
-  "Pandas",
-  "NumPy",
+  "Node.js",
   "Selenium",
   "Puppeteer",
   "PostgreSQL",
   "MySQL",
   "SQLite",
-  "Git",
-  "GitHub",
-  "Vercel",
-  "DigitalOcean",
   "Supabase",
 ];
 
+
 export default function SkillsSection() {
+  const row1 = skills.slice(0, 3);
+  const row2 = skills.slice(3, 9);
+  const row3 = skills.slice(9, 14);
+
   return (
     <Section id="skills" title="Skills">
-      <div className="flex flex-wrap gap-4 justify-center">
-        {skills.map((skill) => (
+      <div className="flex flex-row gap-4 justify-center mb-4">
+        {row1.map((skill) => (
+          <motion.div
+            key={skill}
+            whileHover={{ scale: 1.1 }}
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 text-white font-semibold shadow-md text-lg cursor-pointer select-none"
+          >
+            {skill}
+          </motion.div>
+        ))}
+      </div>
+      <div className="flex flex-row gap-4 justify-center mb-4 flex-wrap">
+        {row2.map((skill) => (
+          <motion.div
+            key={skill}
+            whileHover={{ scale: 1.1 }}
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 text-white font-semibold shadow-md text-lg cursor-pointer select-none"
+          >
+            {skill}
+          </motion.div>
+        ))}
+      </div>
+      <div className="flex flex-row gap-4 justify-center flex-wrap">
+        {row3.map((skill) => (
           <motion.div
             key={skill}
             whileHover={{ scale: 1.1 }}

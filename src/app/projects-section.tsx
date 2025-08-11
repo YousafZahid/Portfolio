@@ -33,6 +33,7 @@ const projects = [
 
 
 
+
 export default function ProjectsSection() {
   const [start, setStart] = useState(0);
   const visibleCount = 3;
