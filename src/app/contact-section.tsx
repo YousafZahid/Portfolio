@@ -53,9 +53,9 @@ export default function ContactSection() {
           className="space-y-6"
         >
           <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-2 border-purple-500/50 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-6 text-white">Let's Connect</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Let&apos;s Connect</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting projects, or just having a chat 
+              I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat 
               about technology and development. Feel free to reach out!
             </p>
             <div className="space-y-4">
