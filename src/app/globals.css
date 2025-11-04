@@ -1,40 +1,155 @@
-
 @import "tailwindcss";
 
+* {
+  scroll-behavior: smooth;
+}
 
 body {
-	font-family: 'Montserrat', sans-serif;
-	background: linear-gradient(135deg, #0a0a0a 0%, #232526 100%);
-	color: #f3f3f3;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #232526 100%);
+  color: #f3f3f3;
+  overflow-x: hidden;
 }
 
 .bg-gradient-to-br {
-	background: linear-gradient(135deg, #0a0a0a 0%, #232526 100%) !important;
+  background: linear-gradient(135deg, #0a0a0a 0%, #232526 100%) !important;
 }
 
 .bg-gradient-to-r {
-	background: linear-gradient(90deg, #18181b 0%, #232526 100%) !important;
+  background: linear-gradient(90deg, #18181b 0%, #232526 100%) !important;
 }
 
 .section-dark {
-	background: linear-gradient(120deg, #18181b 60%, #232526 100%);
-	border-radius: 2rem;
-	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.5);
+  background: linear-gradient(120deg, #18181b 60%, #232526 100%);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
 }
 
 .text-gray-200 {
-	color: #d1d5db;
+  color: #d1d5db;
 }
 
 .text-gray-400 {
-	color: #9ca3af;
+  color: #9ca3af;
 }
 
 @keyframes fadein {
-	from { opacity: 0; }
-	to { opacity: 1; }
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+  }
 }
 
 .animate-fadein {
-	animation: fadein 1.2s ease;
+  animation: fadein 1.2s ease;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9333ea, #ec4899);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a855f7, #f472b6);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: #fff;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgba(168, 85, 247, 0.5);
+  outline-offset: 2px;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text gradient utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #fbbf24, #ec4899, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ensure gradient text is visible */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #fde047, #fbbf24, #ec4899, #a855f7, #9333ea);
+  background-size: 200% 100%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Fallback for gradient text */
+h2 span.bg-clip-text {
+  display: inline-block;
+  background: linear-gradient(to right, #fde047, #fbbf24, #ec4899, #a855f7, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
