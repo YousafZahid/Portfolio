@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import Section from "./components/Section";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -37,6 +37,45 @@ const projects = [
     borderColor: "border-orange-500/50",
     icon: "🛍️",
     url: "https://dashboard.commercesocial.co/"
+  },
+  {
+    title: "Deelmap",
+    category: "SaaS Product",
+    description: "Enterprise-grade real estate email processing and property extraction platform with AI-powered data extraction, automated listing management, and comprehensive property marketplace. Designed for real estate professionals to automatically process and organize property listings from email communications.",
+    technologies: ["Next.js", "TypeScript", "React", "Supabase", "Cloudflare Workers", "AI APIs (Groq/OpenAI)", "DigitalOcean Spaces", "NextAuth"],
+    features: [
+      "Automated email processing via Cloudflare Email Routing",
+      "AI-powered property data extraction from emails",
+      "Intelligent image classification and filtering",
+      "Real-time property marketplace dashboard",
+      "Auto-listing with approval workflow",
+      "Address verification and property lookup integration",
+      "Scheduled URL import and processing",
+      "Multi-user support with secure authentication",
+      "Property history tracking and duplicate detection"
+    ],
+    gradient: "from-indigo-500/20 to-blue-500/20",
+    borderColor: "border-indigo-500/50",
+    icon: "🏠",
+    url: "https://cloudflare-email-inbox-production.up.railway.app/"
+  },
+  {
+    title: "TransWord",
+    category: "SaaS Product",
+    description: "AI-powered translation platform that breaks language barriers by translating text, PDFs, images, audio, and video across 100+ languages. Unified interface enabling seamless multilingual communication for individuals and businesses worldwide.",
+    technologies: ["Next.js", "TypeScript", "React", "Django", "Python", "OpenAI API", "YouTube Data API"],
+    features: [
+      "Unified multi-format translation platform (text, documents, media, video)",
+      "100+ language coverage enabling global accessibility",
+      "Real-time video processing with intelligent caption extraction",
+      "Advanced customization options (style, context, audience)",
+      "Scalable subscription model with automated usage tracking",
+      "Robust error handling and fallback systems ensuring 99%+ uptime"
+    ],
+    gradient: "from-teal-500/20 to-cyan-500/20",
+    borderColor: "border-teal-500/50",
+    icon: "🌐",
+    url: null
   },
   {
     title: "Fiscal - Smart Financial Freedom Advisor",
@@ -122,7 +161,7 @@ export default function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-              </div>
+                </div>
               
               {/* Features */}
               <div className="mb-6">
@@ -142,7 +181,7 @@ export default function ProjectsSection() {
                     </motion.li>
                   ))}
                 </ul>
-              </div>
+          </div>
               
               {/* Visit Project Button */}
               {project.url && (
@@ -169,7 +208,7 @@ export default function ProjectsSection() {
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-2xl blur-xl -z-10`}
                 />
               )}
-            </div>
+      </div>
           </motion.div>
         ))}
       </div>
