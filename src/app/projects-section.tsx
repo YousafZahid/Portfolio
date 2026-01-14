@@ -75,7 +75,7 @@ const projects = [
     gradient: "from-teal-500/20 to-cyan-500/20",
     borderColor: "border-teal-500/50",
     icon: "🌐",
-    url: null
+    url: "https://transword.ai/home"
   },
   {
     title: "Fiscal - Smart Financial Freedom Advisor",
