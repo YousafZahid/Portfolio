@@ -15,12 +15,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#about", label: "About" },
-    { href: "#experience", label: "Experience" },
-    { href: "#projects", label: "Projects" },
-    { href: "#skills", label: "Skills" },
-    { href: "#education", label: "Education" },
-    { href: "#contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/projects", label: "Projects" },
+    { href: "/#about", label: "About" },
+    { href: "/#experience", label: "Experience" },
+    { href: "/#skills", label: "Skills" },
+    { href: "/#education", label: "Education" },
+    { href: "/#contact", label: "Contact" },
   ];
 
   return (
@@ -40,7 +41,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.95 }}
         >
           <Link
-            href="#"
+            href="/"
             className="text-2xl font-black drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)]"
             style={{
               backgroundImage: 'linear-gradient(to right, #fde047, #fbbf24, #ec4899, #a855f7, #9333ea)',
