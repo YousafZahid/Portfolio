@@ -38,10 +38,9 @@ export default function AboutSection() {
         {/* Summary */}
         <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-2 border-purple-500/30 rounded-2xl p-8 mb-8">
           <p className="text-lg md:text-xl text-gray-200 leading-relaxed text-center">
-            Recent Computer Science graduate from FAST NUCES (2025) with hands-on experience in full stack 
-            development, API design, and building SaaS platforms. Skilled in Python/Django (DRF), Flask, 
-            FastAPI, Next.js, React, and TypeScript. Experienced in developing responsive UIs and backend 
-            logic with a focus on performance and scalability.
+            Full Stack Software Engineer experienced in building scalable SaaS platforms, automation systems, 
+            and data-intensive applications. Strong focus on backend architecture, performance optimization, 
+            and production-ready deployments for distributed teams.
           </p>
         </div>
 

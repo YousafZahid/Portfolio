@@ -4,16 +4,30 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "BitBash",
-    period: "June 2025 – Present",
+    title: "Freelance",
+    company: "Self-employed",
+    period: "January 2026 – Present",
     location: "Remote",
     responsibilities: [
-      "Building SaaS platforms for clients with scalable architecture",
-      "Developing automation solutions to streamline business processes",
-      "Creating responsive business websites with modern UI/UX",
-      "Working with Python/Django, FastAPI, Flask, Next.js, TypeScript, React, Selenium, and Puppeteer",
-      "Implementing robust backend logic focused on performance and scalability"
+      "Design and deliver scalable SaaS applications and custom web platforms for international clients",
+      "Manage end-to-end development lifecycle including architecture, backend systems, frontend implementation, deployment, and maintenance",
+      "Implement secure payment integrations, automation pipelines, and optimized database systems for long-term scalability"
+    ],
+    icon: "💼",
+    gradient: "from-violet-500/20 to-purple-500/20",
+    borderColor: "border-violet-500/50"
+  },
+  {
+    title: "Full Stack Developer",
+    company: "BitBash",
+    period: "June 2025 – January 2026",
+    location: "Remote",
+    responsibilities: [
+      "Developed and maintained internal software systems supporting business operations, analytics, and automation. Worked closely with engineers to design reliable, maintainable solutions aligned with long-term business needs",
+      "Architected a large-scale influencer intelligence platform (DataHighOnLikes) using Remix, Elysia and PostgreSQL/TimescaleDB, managing 9.5M+ Instagram profiles (160GB+) through distributed workers",
+      "Designed and implemented a data-intensive internal analytics platform handling millions of records, focusing on performance, data integrity, and reliability. Built background workers, fault-tolerant processing pipelines, and optimized SQL queries to support business reporting and decision-making",
+      "Built CommerceSocial, a FastAPI + React business application for TikTok Shop partners, integrating TikTok Shop APIs to process thousands of shop, creator, and transaction records, providing real-time finance analytics, inventory alerts, sample management, and operational dashboards for business decision-making",
+      "Developed Insta-Scrapper, a Next.js + TypeScript business application capable of extracting thousands of Instagram profiles and datasets per run, enabling businesses to leverage social data for lead generation and market analysis. Implemented cron-based background jobs and concurrent processing to support bulk operations, high reliability, and efficient data throughput"
     ],
     icon: "💼",
     gradient: "from-blue-500/20 to-purple-500/20",
@@ -22,17 +36,30 @@ const experiences = [
   {
     title: "Web Development Intern",
     company: "WebDev Masters",
-    period: "June 2024 – July 2024",
+    period: "June 2024 – August 2024",
     location: "Remote",
     responsibilities: [
-      "Designed and developed responsive web pages using HTML, CSS, and JavaScript",
-      "Implemented dynamic UI components using JavaScript and jQuery",
-      "Optimized website layout and styling for better user experience (UX)",
-      "Integrated animations and interactive elements to enhance engagement"
+      "Designed and developed dynamic, responsive websites using HTML, CSS, JavaScript, and jQuery",
+      "Implemented reusable UI components and optimized UX through clean layouts and interactivity",
+      "Improved page load times and cross-browser compatibility"
     ],
     icon: "🌐",
     gradient: "from-green-500/20 to-emerald-500/20",
     borderColor: "border-green-500/50"
+  },
+  {
+    title: "Python/Django Intern",
+    company: "KK_solutions",
+    period: "June 2024 – July 2024",
+    location: "Remote",
+    responsibilities: [
+      "Developed REST APIs and responsive web pages using Python/Django (DRF) and React",
+      "Ensured security best practices across authentication and data handling",
+      "Assisted in integrating Flask and FastAPI microservices for modular backend architecture"
+    ],
+    icon: "🐍",
+    gradient: "from-emerald-500/20 to-teal-500/20",
+    borderColor: "border-emerald-500/50"
   }
 ];
 
