@@ -278,24 +278,6 @@ export const projects: Project[] = [
     url: null,
     featured: false
   },
-  {
-    title: "SENSEI",
-    category: "Mobile Application",
-    description: "Smart Environmental Navigation System for Enhanced Independence. AI-powered mobile navigation app for visually impaired users with AR, spatial audio, and object detection.",
-    technologies: ["React Native", "Expo", "TensorFlow Lite", "Expo AV", "React Native BLE", "Expo Location"],
-    features: [
-      "Real-time AR navigation and audio guidance",
-      "AI-powered object and obstacle detection",
-      "Spatial audio for directional awareness",
-      "Turn-by-turn voice navigation",
-      "Bluetooth wearable integration",
-      "Accessible UI with screen reader support"
-    ],
-    gradient: "from-lime-500/20 to-green-500/20",
-    borderColor: "border-lime-500/50",
-    url: null,
-    featured: false
-  }
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);
