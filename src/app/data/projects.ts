@@ -135,38 +135,6 @@ export const projects: Project[] = [
     featured: false
   },
   {
-    title: "Ableman Admin Portal",
-    category: "Web Application",
-    description: "Next.js admin portal for Ableman business operations. Centralized dashboard for managing content, users, and business workflows with a modern React stack.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    features: [
-      "Admin dashboard and content management",
-      "User and role management",
-      "Modern responsive UI",
-      "Fast development with Next.js App Router"
-    ],
-    gradient: "from-slate-500/20 to-gray-500/20",
-    borderColor: "border-slate-500/50",
-    url: null,
-    featured: false
-  },
-  {
-    title: "Ableman Main Website",
-    category: "Web Application",
-    description: "Next.js marketing and company website for Ableman. Public-facing site with modern design, performance optimization, and responsive layout.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    features: [
-      "Marketing and landing pages",
-      "Responsive design",
-      "Optimized performance",
-      "Modern UI with Geist font"
-    ],
-    gradient: "from-slate-500/20 to-gray-500/20",
-    borderColor: "border-slate-500/50",
-    url: null,
-    featured: false
-  },
-  {
     title: "Deelmap Admin Portal",
     category: "Web Application",
     description: "Next.js admin portal for the Deelmap real estate platform. Manages listings, users, and platform configuration with a streamlined admin experience.",
@@ -195,7 +163,7 @@ export const projects: Project[] = [
     ],
     gradient: "from-indigo-500/20 to-blue-500/20",
     borderColor: "border-indigo-500/50",
-    url: null,
+    url: "https://deelmap-production-16a1.up.railway.app/",
     featured: false
   },
   {
