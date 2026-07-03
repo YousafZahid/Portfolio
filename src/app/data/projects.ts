@@ -12,40 +12,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "ScraperGlass",
-    category: "SaaS Product",
-    description: "Enterprise-grade Instagram data extraction and analysis platform with bulk operations, advanced filtering, and real-time tracking capabilities. Designed for scalability and multi-user support.",
-    technologies: ["Next.js", "TypeScript", "React", "Python", "Backend APIs"],
-    features: [
-      "Bulk Instagram data extraction",
-      "Real-time tracking dashboard",
-      "Advanced filtering and search",
-      "Multi-user support with secure authentication",
-      "Automated data storage and processing"
-    ],
-    gradient: "from-blue-500/20 to-cyan-500/20",
-    borderColor: "border-blue-500/50",
-    url: "https://www.scraperglass.com/",
-    featured: true
-  },
-  {
-    title: "Commerce Social",
-    category: "SaaS Product",
-    description: "Comprehensive platform for TikTok Shop partners to register accounts and manage shop operations. Integrated with TikTok Shop APIs for complete business management.",
-    technologies: ["FastAPI", "Python", "React", "JavaScript", "TikTok Shop APIs"],
-    features: [
-      "Shop registration and account management",
-      "Finance analytics and reporting",
-      "Inventory alerts and management",
-      "Creator and sample management",
-      "Responsive and efficient user interface"
-    ],
-    gradient: "from-orange-500/20 to-red-500/20",
-    borderColor: "border-orange-500/50",
-    url: "https://dashboard.commercesocial.co/",
-    featured: true
-  },
-  {
     title: "Deelmap",
     category: "SaaS Product",
     description: "Enterprise-grade real estate email processing and property extraction platform with AI-powered data extraction, automated listing management, and comprehensive property marketplace. Designed for real estate professionals to automatically process and organize property listings from email communications.",
@@ -82,6 +48,40 @@ export const projects: Project[] = [
     gradient: "from-teal-500/20 to-cyan-500/20",
     borderColor: "border-teal-500/50",
     url: "https://transword.ai/home",
+    featured: true
+  },
+  {
+    title: "ScraperGlass",
+    category: "SaaS Product",
+    description: "Enterprise-grade Instagram data extraction and analysis platform with bulk operations, advanced filtering, and real-time tracking capabilities. Designed for scalability and multi-user support.",
+    technologies: ["Next.js", "TypeScript", "React", "Python", "Backend APIs"],
+    features: [
+      "Bulk Instagram data extraction",
+      "Real-time tracking dashboard",
+      "Advanced filtering and search",
+      "Multi-user support with secure authentication",
+      "Automated data storage and processing"
+    ],
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    borderColor: "border-blue-500/50",
+    url: "https://www.scraperglass.com/",
+    featured: true
+  },
+  {
+    title: "Commerce Social",
+    category: "SaaS Product",
+    description: "Comprehensive platform for TikTok Shop partners to register accounts and manage shop operations. Integrated with TikTok Shop APIs for complete business management.",
+    technologies: ["FastAPI", "Python", "React", "JavaScript", "TikTok Shop APIs"],
+    features: [
+      "Shop registration and account management",
+      "Finance analytics and reporting",
+      "Inventory alerts and management",
+      "Creator and sample management",
+      "Responsive and efficient user interface"
+    ],
+    gradient: "from-orange-500/20 to-red-500/20",
+    borderColor: "border-orange-500/50",
+    url: "https://dashboard.commercesocial.co/",
     featured: true
   },
   {
