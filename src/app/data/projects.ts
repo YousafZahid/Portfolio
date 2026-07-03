@@ -51,6 +51,42 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    title: "Fries In Box",
+    category: "Brand & Restaurant Website",
+    description: "Editorial, art-directed marketing website for a Johar Town, Lahore late-night fast-food brand. Features an animated hero, an interactive full menu with live pricing, a drag-to-explore signatures carousel, brand story, gallery, and an order/visit section with maps and WhatsApp ordering.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Vercel"],
+    features: [
+      "Editorial design with custom cursor and film-grain texture",
+      "Animated hero, marquees, and scroll-reveal effects",
+      "Interactive full menu with real items and pricing",
+      "Drag-to-explore signatures carousel",
+      "Google Maps location with WhatsApp and call-to-order",
+      "Fully responsive with SEO and Open Graph optimization"
+    ],
+    gradient: "from-amber-500/20 to-red-500/20",
+    borderColor: "border-amber-500/50",
+    url: "https://fries-in-box.vercel.app",
+    featured: true
+  },
+  {
+    title: "Atif Fitness Club",
+    category: "Fitness Brand Website",
+    description: "Modern, dark-themed marketing website for a Lahore gym in Al-Hamra Town. Includes a bold hero, services overview, tiered membership plans, gallery, member results, and a contact section with free-trial booking and WhatsApp CTA.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Vercel"],
+    features: [
+      "Sleek dark UI with gold accent branding",
+      "Services: modern equipment, strength, cardio, personal training",
+      "Tiered membership plans (Basic, Pro, Elite)",
+      "Image gallery and member results section",
+      "Free-trial booking and WhatsApp contact",
+      "Fully responsive and SEO optimized"
+    ],
+    gradient: "from-yellow-500/20 to-amber-600/20",
+    borderColor: "border-yellow-500/50",
+    url: "https://atif-fitness-club.vercel.app",
+    featured: true
+  },
+  {
     title: "ScraperGlass",
     category: "SaaS Product",
     description: "Enterprise-grade Instagram data extraction and analysis platform with bulk operations, advanced filtering, and real-time tracking capabilities. Designed for scalability and multi-user support.",
