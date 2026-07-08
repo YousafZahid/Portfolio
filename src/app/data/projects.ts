@@ -114,7 +114,24 @@ export const projects: Project[] = [
     gradient: "from-amber-500/20 to-red-500/20",
     borderColor: "border-amber-500/50",
     url: "https://fries-in-box.vercel.app",
-    featured: true
+    featured: true,
+    slug: "fries-in-box",
+    image: "/projects/fries-in-box/main.png",
+    galleryCount: 3,
+    caseStudy: {
+      overview:
+        "An editorial, animated marketing website for a Johar Town, Lahore late-night fast-food brand, with an interactive menu, a signatures carousel, and an order flow.",
+      problem:
+        "A growing food brand needed an online presence that matched its bold identity and made the menu and ordering effortless.",
+      build: [
+        "Art-directed design with a custom cursor, film-grain texture, and animated hero and marquees.",
+        "Interactive full menu with real items and pricing, plus a drag-to-explore signatures carousel.",
+        "Order and visit section with Google Maps location, WhatsApp ordering, and call-to-order.",
+        "Fully responsive with SEO and Open Graph optimization.",
+      ],
+      impact: "A branded site that reflects the brand's identity and turns visitors into orders.",
+      role: "Designer and developer, built with HTML, CSS, and JavaScript, deployed on Vercel.",
+    }
   },
   {
     title: "Atif Fitness Club",
@@ -132,7 +149,24 @@ export const projects: Project[] = [
     gradient: "from-yellow-500/20 to-amber-600/20",
     borderColor: "border-yellow-500/50",
     url: "https://atif-fitness-club.vercel.app",
-    featured: true
+    featured: true,
+    slug: "atif-fitness",
+    image: "/projects/atif-fitness/main.png",
+    galleryCount: 4,
+    caseStudy: {
+      overview:
+        "A modern, dark-themed marketing website for a Lahore gym, with services, membership plans, a gallery, and lead capture.",
+      problem:
+        "The gym needed a professional site to showcase its facilities and convert visitors into trials and memberships.",
+      build: [
+        "Bold hero and services overview with a gold-accented dark design.",
+        "Tiered membership plans (Basic, Pro, Elite) and a member results section.",
+        "Free-trial booking and WhatsApp contact for lead capture.",
+        "Fully responsive and SEO optimized.",
+      ],
+      impact: "A polished presence that drives trial bookings and membership inquiries.",
+      role: "Designer and developer, built with HTML, CSS, and JavaScript, deployed on Vercel.",
+    }
   },
   {
     title: "ScraperGlass",
