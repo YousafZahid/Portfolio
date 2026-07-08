@@ -1,14 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Yousaf Zahid - Full Stack Developer & SaaS Builder",
-  description: "Computer Science graduate from FAST NUCES specializing in full stack development, SaaS platforms, and API design. Expert in Python/Django, React, Next.js, and building scalable applications.",
-  keywords: "Full Stack Developer, SaaS Developer, Python Developer, React Developer, Next.js Developer, Django Developer, Web Developer, Pakistan",
+  metadataBase: new URL("https://portfolio-azure-three-42.vercel.app"),
+  title: "Yousaf Zahid — Full Stack Developer",
+  description:
+    "Full Stack Developer building production SaaS platforms, AI-integrated systems, and data-intensive applications with Next.js, React, Node.js, and Python/Django.",
+  keywords:
+    "Full Stack Developer, Next.js, React, Node.js, Python, Django, FastAPI, SaaS, AI, Pakistan, Yousaf Zahid",
+  openGraph: {
+    title: "Yousaf Zahid — Full Stack Developer",
+    description:
+      "I build production SaaS platforms, AI-integrated systems, and data-intensive applications.",
+    url: "/",
+    siteName: "Yousaf Zahid",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yousaf Zahid — Full Stack Developer",
+    description:
+      "I build production SaaS platforms, AI-integrated systems, and data-intensive applications.",
+  },
 };
-
-
-import Navbar from "./components/Navbar";
 
 export default function RootLayout({
   children,
@@ -20,11 +36,17 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="font-[Montserrat] bg-[#0f2027] text-white min-h-screen transition-all duration-700 animate-fadein">
+      <body className="min-h-screen antialiased">
+        <div className="backdrop-glow" />
+        <div className="grid-lines" />
         <Navbar />
-        <div className="pt-20">{children}</div>
+        <div className="relative z-10">{children}</div>
+        <Analytics />
       </body>
     </html>
   );

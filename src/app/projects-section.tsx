@@ -1,145 +1,98 @@
 "use client";
 import Section from "./components/Section";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { featuredProjects, type Project } from "./data/projects";
 
-function ProjectCard({
-  project,
-  index,
-  hoveredIndex,
-  setHoveredIndex,
-  showFullFeatures = true,
-}: {
-  project: Project;
-  index: number;
-  hoveredIndex: number | null;
-  setHoveredIndex: (i: number | null) => void;
-  showFullFeatures?: boolean;
-}) {
-  const features = showFullFeatures ? project.features : project.features.slice(0, 3);
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      onHoverStart={() => setHoveredIndex(index)}
-      onHoverEnd={() => setHoveredIndex(null)}
-      className="group relative"
-    >
-      <div
-        className={`relative bg-gradient-to-br ${project.gradient} border-2 ${project.borderColor} rounded-2xl p-8 h-full transition-all duration-300 ${
-          hoveredIndex === index ? "scale-[1.02] shadow-2xl shadow-purple-500/20" : ""
-        }`}
-      >
-        {/* Category Badge */}
-        <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-purple-300 mb-4">
-          {project.category}
-        </span>
+const ease = [0.16, 1, 0.3, 1] as const;
 
-        {/* Title */}
-        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-purple-300 transition-colors">
+export function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const href = project.slug ? `/projects/${project.slug}` : project.url ?? undefined;
+  const internal = Boolean(project.slug);
+  const features = project.features.slice(0, 3);
+
+  const CardInner = (
+    <>
+      {project.image && (
+        <div className="relative aspect-[16/10] bg-[#0a0a0c] overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 560px"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      )}
+      <div className="p-7 flex flex-col flex-1">
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <span className="text-xs font-medium uppercase tracking-wider text-[var(--muted-2)]">
+            {project.category}
+          </span>
+          {project.url && (
+            <span className="text-xs text-[var(--muted-2)] group-hover:text-[var(--accent)] transition-colors">
+              {internal ? "Case study →" : "Live ↗"}
+            </span>
+          )}
+        </div>
+        <h3 className="font-display text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-[var(--accent)] transition-colors">
           {project.title}
         </h3>
-
-        {/* Description */}
-        <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
-
-        {/* Technologies */}
-        <div className="mb-6">
-          <h4 className="text-sm font-semibold text-purple-300 mb-3">Technologies:</h4>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 rounded-full bg-white/10 text-xs text-gray-300 border border-white/20"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+        <p className="text-sm text-[var(--muted)] leading-relaxed mb-5">{project.description}</p>
+        <ul className="space-y-1.5 mb-5">
+          {features.map((f, idx) => (
+            <li key={idx} className="flex gap-2.5 text-sm text-[var(--muted)]">
+              <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--accent)] shrink-0" />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-[var(--border)]">
+          {project.technologies.slice(0, 6).map((t) => (
+            <span key={t} className="text-xs text-[var(--muted-2)]">{t}</span>
+          ))}
         </div>
-
-        {/* Features */}
-        <div className="mb-6">
-          <h4 className="text-sm font-semibold text-purple-300 mb-3">Key Features:</h4>
-          <ul className="space-y-2">
-            {features.map((feature, idx) => (
-              <motion.li
-                key={idx}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 + idx * 0.05 }}
-                className="flex items-start text-sm text-gray-300"
-              >
-                <span className="text-purple-400 mr-2">▸</span>
-                <span>{feature}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Visit Project Button */}
-        {project.url && (
-          <motion.a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
-          >
-            <span>Visit Project</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-          </motion.a>
-        )}
-
-        {/* Hover Effect Glow */}
-        {hoveredIndex === index && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-2xl blur-xl -z-10`}
-          />
-        )}
       </div>
+    </>
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay: index * 0.06, ease }}
+      className="h-full"
+    >
+      {href ? (
+        internal ? (
+          <Link href={href} className="card group overflow-hidden h-full flex flex-col">
+            {CardInner}
+          </Link>
+        ) : (
+          <a href={href} target="_blank" rel="noopener noreferrer" className="card group overflow-hidden h-full flex flex-col">
+            {CardInner}
+          </a>
+        )
+      ) : (
+        <div className="card group overflow-hidden h-full flex flex-col">{CardInner}</div>
+      )}
     </motion.div>
   );
 }
 
 export default function ProjectsSection() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const displayProjects = featuredProjects.slice(0, 6);
-
   return (
-    <Section id="projects" title="Featured Projects" customClass="max-w-7xl">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+    <Section id="projects" title="Featured Projects" kicker="Selected work" customClass="max-w-6xl">
+      <div className="grid md:grid-cols-2 gap-5 items-stretch">
         {displayProjects.map((project, index) => (
-          <ProjectCard
-            key={project.title}
-            project={project}
-            index={index}
-            hoveredIndex={hoveredIndex}
-            setHoveredIndex={setHoveredIndex}
-            showFullFeatures={false}
-          />
+          <ProjectCard key={project.title} project={project} index={index} />
         ))}
       </div>
-      <div className="mt-12 text-center">
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-2 border-purple-500/50 text-purple-300 font-semibold hover:bg-purple-500/10 transition-all duration-300"
-        >
+      <div className="mt-10">
+        <Link href="/projects" className="btn-ghost">
           View all projects
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

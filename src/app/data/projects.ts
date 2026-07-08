@@ -1,3 +1,11 @@
+export interface CaseStudy {
+  overview: string;
+  problem: string;
+  build: string[];
+  impact: string;
+  role: string;
+}
+
 export interface Project {
   title: string;
   category: string;
@@ -8,6 +16,10 @@ export interface Project {
   borderColor: string;
   url: string | null;
   featured?: boolean;
+  slug?: string;
+  image?: string;
+  galleryCount?: number;
+  caseStudy?: CaseStudy;
 }
 
 export const projects: Project[] = [
@@ -29,8 +41,26 @@ export const projects: Project[] = [
     ],
     gradient: "from-indigo-500/20 to-blue-500/20",
     borderColor: "border-indigo-500/50",
-    url: "https://cloudflare-email-inbox-production.up.railway.app/",
-    featured: true
+    url: "https://deelmap.com/",
+    featured: true,
+    slug: "deelmap",
+    image: "/projects/deelmap/main.png",
+    galleryCount: 21,
+    caseStudy: {
+      overview:
+        "A wholesale real-estate marketplace ecosystem: a buyer marketplace, a seller SaaS portal, an admin dashboard, and a React Native mobile app, backed by a shared Supabase/PostgreSQL data layer and 5+ services on Railway.",
+      problem:
+        "Wholesale property deals are scattered across emails, texts, and dozens of listing sites. Investors waste hours hunting for deals, and sellers have no unified place to list, negotiate, and close.",
+      build: [
+        "Buyer marketplace with real-time Google Maps (clustering and boundary filters), advanced search, and financial tooling including a DSCR calculator with PDF export.",
+        "Seller SaaS with listings, subscriptions, team workspaces, role-based permissions, and a Stripe Connect referral payout system.",
+        "AI deal-ingestion pipelines that read inbound email and SMS (Telnyx), extract structured data with Groq LLMs, and auto-select images with Google Vision on scheduled Railway cron workers.",
+        "Stripe payments and subscriptions, DocuSeal e-signature contracts, and real-time messaging with offer negotiation.",
+      ],
+      impact:
+        "A single platform that fills itself with deals automatically and lets buyers discover, negotiate, sign, and pay end to end.",
+      role: "Full-stack developer across web, mobile, backend services, and AI pipelines.",
+    }
   },
   {
     title: "TransWord",
@@ -48,7 +78,25 @@ export const projects: Project[] = [
     gradient: "from-teal-500/20 to-cyan-500/20",
     borderColor: "border-teal-500/50",
     url: "https://transword.ai/home",
-    featured: true
+    featured: true,
+    slug: "transword",
+    image: "/projects/transword/main.png",
+    galleryCount: 3,
+    caseStudy: {
+      overview:
+        "An AI translation platform that converts text, PDFs, images, audio, and video across 100+ languages, built on a Django REST Framework backend with a Next.js frontend.",
+      problem:
+        "Free translators fail on real documents and media. People need accurate translation of certificates, statements, and audio or video, not just single sentences.",
+      build: [
+        "Unified translation for text, PDFs, images (OCR), audio, and video, plus tools for transcription, summarizing, and rephrasing.",
+        "Realistic AI voice output and dubbing via ElevenLabs, with translation powered by OpenAI.",
+        "Subscription plans and add-ons with SafePay payments and automated usage tracking.",
+        "Django REST Framework backend on AWS EC2 with a Next.js frontend, deployed across AWS and GCP with Nginx and CI/CD.",
+      ],
+      impact:
+        "A production translation product handling real users and payments, with coverage across 100+ languages.",
+      role: "Full-stack developer: Django DRF backend, Next.js frontend, and AI integrations.",
+    }
   },
   {
     title: "Fries In Box",
@@ -101,7 +149,23 @@ export const projects: Project[] = [
     gradient: "from-blue-500/20 to-cyan-500/20",
     borderColor: "border-blue-500/50",
     url: "https://www.scraperglass.com/",
-    featured: true
+    featured: true,
+    slug: "scraperglass",
+    image: "/projects/scraperglass/main.png",
+    galleryCount: 1,
+    caseStudy: {
+      overview:
+        "An enterprise Instagram data extraction and analysis platform with bulk operations, advanced filtering, and real-time tracking.",
+      problem:
+        "Teams need large-scale social data for lead generation and market analysis, but manual collection does not scale.",
+      build: [
+        "Bulk Instagram data extraction with a real-time tracking dashboard.",
+        "Advanced filtering and search across large datasets.",
+        "Multi-user support with secure authentication and automated storage and processing.",
+      ],
+      impact: "Reliable, high-throughput data extraction that powers business intelligence.",
+      role: "Full-stack developer.",
+    }
   },
   {
     title: "Commerce Social",
@@ -118,7 +182,23 @@ export const projects: Project[] = [
     gradient: "from-orange-500/20 to-red-500/20",
     borderColor: "border-orange-500/50",
     url: "https://dashboard.commercesocial.co/",
-    featured: true
+    featured: true,
+    slug: "commercesocial",
+    image: "/projects/commercesocial/main.png",
+    galleryCount: 0,
+    caseStudy: {
+      overview:
+        "A platform for TikTok Shop partners to register and manage shop operations, integrated directly with TikTok Shop APIs.",
+      problem:
+        "TikTok Shop partners lack a single place to manage finances, inventory, and creators across their operations.",
+      build: [
+        "Shop registration and account management.",
+        "Finance analytics, inventory alerts, and creator and sample management.",
+        "A FastAPI and React application integrating TikTok Shop APIs for real-time reporting.",
+      ],
+      impact: "Operational dashboards that turn shop, creator, and transaction data into decisions.",
+      role: "Full-stack developer: FastAPI backend and React frontend.",
+    }
   },
   {
     title: "Fiscal - Smart Financial Freedom Advisor",
@@ -184,22 +264,6 @@ export const projects: Project[] = [
     gradient: "from-indigo-500/20 to-blue-500/20",
     borderColor: "border-indigo-500/50",
     url: null,
-    featured: false
-  },
-  {
-    title: "Deelmap Buyer",
-    category: "Web Application",
-    description: "Buyer-facing Next.js application for the Deelmap property marketplace. Enables property discovery, search, and inquiry with a focused user experience.",
-    technologies: ["Next.js", "React", "TypeScript", "Supabase"],
-    features: [
-      "Property search and discovery",
-      "Listing details and inquiry flow",
-      "Responsive buyer experience",
-      "Integration with Deelmap backend"
-    ],
-    gradient: "from-indigo-500/20 to-blue-500/20",
-    borderColor: "border-indigo-500/50",
-    url: "https://deelmap-production-16a1.up.railway.app/",
     featured: false
   },
   {

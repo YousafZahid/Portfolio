@@ -2,88 +2,69 @@
 import Section from "./components/Section";
 import { motion } from "framer-motion";
 
+const highlights = [
+  {
+    title: "End-to-end delivery",
+    description:
+      "From database and API design to responsive frontends and cloud deployment, I own features from start to finish.",
+  },
+  {
+    title: "SaaS at scale",
+    description:
+      "Built multi-service SaaS platforms with subscriptions, payments, and data pipelines handling millions of records.",
+  },
+  {
+    title: "AI integration",
+    description:
+      "Integrated LLMs (OpenAI, Groq) and vision APIs into production for data extraction, automation, and AI features.",
+  },
+  {
+    title: "AI-assisted workflow",
+    description:
+      "I build with Claude Code, Codex, and Cursor daily, planning architecture first and shipping fast without dropping quality.",
+  },
+];
+
+const ease = [0.16, 1, 0.3, 1] as const;
+
 export default function AboutSection() {
-  const highlights = [
-    {
-      title: "Full Stack Expertise",
-      description: "Proficient in building end-to-end solutions from backend APIs to responsive frontends",
-      icon: "🚀"
-    },
-    {
-      title: "SaaS Development",
-      description: "Experience building scalable SaaS platforms with multi-user support and secure authentication",
-      icon: "☁️"
-    },
-    {
-      title: "Performance Focus",
-      description: "Committed to building applications with optimal performance and scalability",
-      icon: "⚡"
-    },
-    {
-      title: "Modern Technologies",
-      description: "Up-to-date with latest frameworks and tools in the industry",
-      icon: "💡"
-    }
-  ];
-
   return (
-    <Section id="about" title="About Me" customClass="max-w-6xl">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto"
-      >
-        {/* Summary */}
-        <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-2 border-purple-500/30 rounded-2xl p-8 mb-8">
-          <p className="text-lg md:text-xl text-gray-200 leading-relaxed text-center">
-            Full Stack Software Engineer experienced in building scalable SaaS platforms, automation systems, 
-            and data-intensive applications. Strong focus on backend architecture, performance optimization, 
-            and production-ready deployments for distributed teams.
+    <Section id="about" title="About" kicker="Who I am" customClass="max-w-5xl">
+      <div className="grid lg:grid-cols-5 gap-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease }}
+          className="lg:col-span-2"
+        >
+          <p className="text-lg text-[var(--text)] leading-relaxed">
+            I&apos;m a full-stack developer with a year of hands-on experience building and shipping
+            production software.
           </p>
-        </div>
+          <p className="mt-4 text-[var(--muted)] leading-relaxed">
+            I&apos;ve built a multi-service real-estate marketplace, a platform handling 9.5M+
+            records, and AI-integrated products across real estate, e-commerce, and fintech. I care
+            about clean architecture, performance, and getting real things shipped.
+          </p>
+        </motion.div>
 
-        {/* Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {highlights.map((highlight, index) => (
+        <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4">
+          {highlights.map((h, i) => (
             <motion.div
-              key={highlight.title}
-              initial={{ opacity: 0, y: 30 }}
+              key={h.title}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-br from-[#232526] to-[#18181b] border-2 border-purple-500/30 rounded-2xl p-6 hover:border-purple-500/60 transition-all duration-300"
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease }}
+              className="card p-6"
             >
-              <div className="text-4xl mb-4">{highlight.icon}</div>
-              <h3 className="text-xl font-bold mb-2 text-white">
-                {highlight.title}
-              </h3>
-              <p className="text-gray-300">
-                {highlight.description}
-              </p>
+              <h3 className="font-display text-lg font-semibold text-white mb-2">{h.title}</h3>
+              <p className="text-sm text-[var(--muted)] leading-relaxed">{h.description}</p>
             </motion.div>
           ))}
         </div>
-
-        {/* Why Choose Me */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-8 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 border-2 border-purple-500/50 rounded-2xl p-8 text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-yellow-300 mb-4">
-            Why Choose Me?
-          </h3>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            I bring a unique combination of technical expertise, business understanding, and a passion for 
-            creating solutions that make a real impact. From building SaaS platforms to developing automation 
-            tools, I focus on delivering results that exceed expectations.
-          </p>
-        </motion.div>
-      </motion.div>
+      </div>
     </Section>
   );
 }

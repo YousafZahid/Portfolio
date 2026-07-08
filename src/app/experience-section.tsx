@@ -4,140 +4,87 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Freelance",
-    company: "Self-employed",
-    period: "January 2026 – Present",
-    location: "Remote",
-    responsibilities: [
-      "Design and deliver scalable SaaS applications and custom web platforms for international clients",
-      "Manage end-to-end development lifecycle including architecture, backend systems, frontend implementation, deployment, and maintenance",
-      "Implement secure payment integrations, automation pipelines, and optimized database systems for long-term scalability"
+    title: "Full Stack Developer",
+    company: "Airosofts",
+    period: "December 2025 – June 2026",
+    location: "On-site · Lahore",
+    points: [
+      "Building Deelmap, a wholesale real-estate marketplace ecosystem with a buyer portal, seller SaaS, admin portal, and a React Native (Expo) mobile app, on Next.js, React 19, TypeScript, and Supabase/PostgreSQL, shipped as 5+ services on Railway with CI/CD.",
+      "Engineered AI-driven deal-ingestion pipelines that read inbound email and SMS (Telnyx), extract structured data with Groq LLMs, and auto-select listing images with Google Vision, running on scheduled Railway cron workers.",
+      "Integrated Stripe subscriptions, add-on purchases and Stripe Connect referral payouts, DocuSeal e-signature contracts, real-time messaging with offer negotiation, and a DSCR calculator with PDF export.",
+      "Built real-time Google Maps with marker clustering and boundary filtering, role-based admin portals, and AI seller-outreach SMS campaigns (Airophone) powered by OpenAI and Groq.",
     ],
-    icon: "💼",
-    gradient: "from-violet-500/20 to-purple-500/20",
-    borderColor: "border-violet-500/50"
   },
   {
     title: "Full Stack Developer",
     company: "BitBash",
     period: "June 2025 – January 2026",
-    location: "Remote",
-    responsibilities: [
-      "Developed and maintained internal software systems supporting business operations, analytics, and automation. Worked closely with engineers to design reliable, maintainable solutions aligned with long-term business needs",
-      "Architected a large-scale influencer intelligence platform (DataHighOnLikes) using Remix, Elysia and PostgreSQL/TimescaleDB, managing 9.5M+ Instagram profiles (160GB+) through distributed workers",
-      "Designed and implemented a data-intensive internal analytics platform handling millions of records, focusing on performance, data integrity, and reliability. Built background workers, fault-tolerant processing pipelines, and optimized SQL queries to support business reporting and decision-making",
-      "Built CommerceSocial, a FastAPI + React business application for TikTok Shop partners, integrating TikTok Shop APIs to process thousands of shop, creator, and transaction records, providing real-time finance analytics, inventory alerts, sample management, and operational dashboards for business decision-making",
-      "Developed Insta-Scrapper, a Next.js + TypeScript business application capable of extracting thousands of Instagram profiles and datasets per run, enabling businesses to leverage social data for lead generation and market analysis. Implemented cron-based background jobs and concurrent processing to support bulk operations, high reliability, and efficient data throughput"
+    location: "On-site · Lahore",
+    points: [
+      "Architected DataHighOnLikes, a distributed influencer-intelligence platform managing 9.5M+ Instagram profiles across 160GB+ of data (PostgreSQL/TimescaleDB) through parallel workers and fault-tolerant pipelines.",
+      "Designed and shipped a data-intensive internal analytics platform on Django (DRF) and PostgreSQL, with normalized schemas, indexed queries across millions of rows, and async background workers that cut reporting latency.",
+      "Built CommerceSocial (FastAPI + React) for TikTok Shop partners, integrating TikTok Shop APIs into real-time finance analytics, inventory alerts, and operational dashboards.",
+      "Developed Insta-Scrapper (Next.js + TypeScript) with cron-based background jobs and concurrent processing for high-throughput data extraction.",
     ],
-    icon: "💼",
-    gradient: "from-blue-500/20 to-purple-500/20",
-    borderColor: "border-blue-500/50"
+  },
+  {
+    title: "Freelance & Personal Projects",
+    company: "Independent",
+    period: "2024 – Present",
+    location: "Remote",
+    points: [
+      "Design and deliver SaaS applications and custom web platforms for international clients, owning architecture, backend, frontend, deployment, and maintenance.",
+      "Built Transword.ai, an AI translation platform on a Django REST Framework backend with a Next.js frontend, integrating OpenAI and ElevenLabs, deployed on AWS and GCP.",
+      "Built QuantMind, an explainable-AI portfolio advisor combining reinforcement learning over S&P 500 data with from-scratch Shapley explanations and backtesting.",
+    ],
   },
   {
     title: "Web Development Intern",
     company: "WebDev Masters",
     period: "June 2024 – August 2024",
-    location: "Remote",
-    responsibilities: [
-      "Designed and developed dynamic, responsive websites using HTML, CSS, JavaScript, and jQuery",
-      "Implemented reusable UI components and optimized UX through clean layouts and interactivity",
-      "Improved page load times and cross-browser compatibility"
+    location: "On-site · Lahore",
+    points: [
+      "Built responsive client websites with HTML, CSS, JavaScript, and jQuery, with reusable UI components and cross-browser compatibility.",
+      "Improved page-load performance and optimized layouts for a cleaner user experience.",
     ],
-    icon: "🌐",
-    gradient: "from-green-500/20 to-emerald-500/20",
-    borderColor: "border-green-500/50"
   },
-  {
-    title: "Python/Django Intern",
-    company: "KK_solutions",
-    period: "June 2024 – July 2024",
-    location: "Remote",
-    responsibilities: [
-      "Developed REST APIs and responsive web pages using Python/Django (DRF) and React",
-      "Ensured security best practices across authentication and data handling",
-      "Assisted in integrating Flask and FastAPI microservices for modular backend architecture"
-    ],
-    icon: "🐍",
-    gradient: "from-emerald-500/20 to-teal-500/20",
-    borderColor: "border-emerald-500/50"
-  }
 ];
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function ExperienceSection() {
   return (
-    <Section id="experience" title="Professional Experience" customClass="max-w-6xl">
-      <div className="space-y-8 mt-12">
+    <Section id="experience" title="Experience" kicker="Career" customClass="max-w-4xl">
+      <div className="relative border-l border-[var(--border)] pl-8 md:pl-10 space-y-14">
         {experiences.map((exp, index) => (
           <motion.div
-            key={exp.company}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            key={exp.company + exp.period}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, delay: index * 0.05, ease }}
             className="relative"
           >
-            {/* Timeline line */}
-            {index < experiences.length - 1 && (
-              <div className="absolute left-8 top-20 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 to-transparent" />
-            )}
-            
-            <div className={`relative bg-gradient-to-br ${exp.gradient} border-2 ${exp.borderColor} rounded-2xl p-8 ml-0 md:ml-4 hover:shadow-2xl transition-all duration-300`}>
-              {/* Icon */}
-              <div className="absolute -left-4 top-8 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-2xl shadow-lg border-4 border-[#0a0a0a]">
-                {exp.icon}
-              </div>
-              
-              {/* Header */}
-              <div className="mb-6">
-                <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    {exp.title}
-                  </h3>
-                  <span className="px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-purple-300">
-                    {exp.company}
-                  </span>
-                </div>
-                <div className="flex flex-wrap items-center gap-4 text-gray-300">
-                  <span className="flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    {exp.period}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    {exp.location}
-                  </span>
-                </div>
-              </div>
-              
-              {/* Responsibilities */}
-              <div>
-                <h4 className="text-lg font-semibold text-purple-300 mb-4">Key Responsibilities:</h4>
-                <ul className="space-y-3">
-                  {exp.responsibilities.map((resp, idx) => (
-                    <motion.li
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + idx * 0.1 }}
-                      className="flex items-start text-gray-300"
-                    >
-                      <span className="text-purple-400 mr-3 mt-1">▸</span>
-                      <span>{resp}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+            <span className="absolute -left-[35px] md:-left-[43px] top-1.5 w-2.5 h-2.5 rounded-full bg-[var(--accent)] ring-4 ring-[var(--bg)]" />
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h3 className="font-display text-xl md:text-2xl font-semibold text-white">{exp.title}</h3>
+              <span className="font-medium" style={{ color: "var(--accent)" }}>{exp.company}</span>
             </div>
+            <div className="mt-1.5 text-sm text-[var(--muted-2)] flex flex-wrap gap-x-4 gap-y-1">
+              <span>{exp.period}</span>
+              <span>{exp.location}</span>
+            </div>
+            <ul className="mt-4 space-y-2.5">
+              {exp.points.map((p, idx) => (
+                <li key={idx} className="flex gap-3 text-[var(--muted)] leading-relaxed">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0" />
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         ))}
       </div>
     </Section>
   );
 }
-
