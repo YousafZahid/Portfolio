@@ -99,73 +99,193 @@ export const projects: Project[] = [
     }
   },
   {
-    title: "Fries In Box",
-    category: "Brand & Restaurant Website",
-    description: "Editorial, art-directed marketing website for a Johar Town, Lahore late-night fast-food brand. Features an animated hero, an interactive full menu with live pricing, a drag-to-explore signatures carousel, brand story, gallery, and an order/visit section with maps and WhatsApp ordering.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Vercel"],
+    title: "8x Scout",
+    category: "SaaS Product",
+    description: "Referral platform for 8x, the creator network behind organic video for consumer brands. Students and new graduates in Türkiye become \"scouts\": they refer brands, get them to book a call with 8x, and earn commission when the deal closes. Tracking who brought in which brand honestly is the whole job, so the right scout gets paid.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Prisma", "PostgreSQL", "Supabase Auth", "TanStack Query", "next-intl"],
     features: [
-      "Editorial design with custom cursor and film-grain texture",
-      "Animated hero, marquees, and scroll-reveal effects",
-      "Interactive full menu with real items and pricing",
-      "Drag-to-explore signatures carousel",
-      "Google Maps location with WhatsApp and call-to-order",
-      "Fully responsive with SEO and Open Graph optimization"
+      "Personal referral link and code, with click tracking that ignores link-preview bots",
+      "Brand submissions reviewed by 8x before they become a scout's lead",
+      "Strict link-or-code attribution, with a human review queue for anything unclear",
+      "Deal pipeline (booked, held, won/lost) that creates commissions automatically",
+      "Commission ledger (pending, approved, payable, paid) and a scout wallet",
+      "Four-level career path with onboarding academy and leaderboard",
+      "Role-based admin console with a full audit log",
+      "Bilingual interface in English and Turkish"
     ],
-    gradient: "from-amber-500/20 to-red-500/20",
-    borderColor: "border-amber-500/50",
-    url: "https://fries-in-box.vercel.app",
+    gradient: "from-orange-500/20 to-rose-500/20",
+    borderColor: "border-orange-500/50",
+    url: "https://8x-scout.vercel.app",
     featured: true,
-    slug: "fries-in-box",
-    image: "/projects/fries-in-box/main.png",
+    slug: "8x-scout",
+    image: "/projects/8x-scout/main.png",
     galleryCount: 3,
     caseStudy: {
       overview:
-        "An editorial, animated marketing website for a Johar Town, Lahore late-night fast-food brand, with an interactive menu, a signatures carousel, and an order flow.",
+        "A referral platform for an 8x Social pilot in Türkiye that tracks which scout brought in which brand, so the right person gets paid.",
       problem:
-        "A growing food brand needed an online presence that matched its bold identity and made the menu and ordering effortless.",
+        "8x wanted outside referrers to source brands, but attribution that guesses will eventually pay the wrong person and cost the scouts' trust.",
       build: [
-        "Art-directed design with a custom cursor, film-grain texture, and animated hero and marquees.",
-        "Interactive full menu with real items and pricing, plus a drag-to-explore signatures carousel.",
-        "Order and visit section with Google Maps location, WhatsApp ordering, and call-to-order.",
-        "Fully responsive with SEO and Open Graph optimization.",
+        "Multi-file Prisma schema split by domain (identity, claims, bookings, money, onboarding, authz, ops) with CI-generated migrations.",
+        "Link-or-code attribution with bot-filtered click tracking, replacing weaker matching (email domain, saved contacts) with a human review queue.",
+        "A commission state machine (pending, approved, payable, paid) triggered when a deal is marked won, with every admin change written to the audit log.",
+        "Custom RBAC on top of Supabase Auth, staff invites, scheduled cron jobs, and English/Turkish localisation through next-intl.",
       ],
-      impact: "A branded site that reflects the brand's identity and turns visitors into orders.",
-      role: "Designer and developer, built with HTML, CSS, and JavaScript, deployed on Vercel.",
+      impact:
+        "A documented pilot platform where every payout can be traced back to a link, a code, or a human decision.",
+      role: "Full-stack developer: data model, attribution logic, scout dashboard, and admin console.",
     }
   },
   {
-    title: "Atif Fitness Club",
-    category: "Fitness Brand Website",
-    description: "Modern, dark-themed marketing website for a Lahore gym in Al-Hamra Town. Includes a bold hero, services overview, tiered membership plans, gallery, member results, and a contact section with free-trial booking and WhatsApp CTA.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Vercel"],
+    title: "8x Referral",
+    category: "SaaS Product",
+    description: "B2B partner programme for consultants, agency owners, and founders who introduce brands to 8x. Partners share a personal link; when a brand books a call through it and signs, they earn 2% of the first three monthly payments. Covers every 8x vertical, with a partner portal, an admin console, and an MCP server so managers can work bookings straight from Claude.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Prisma", "Supabase Auth", "Model Context Protocol", "GSAP", "Slack API"],
     features: [
-      "Sleek dark UI with gold accent branding",
-      "Services: modern equipment, strength, cardio, personal training",
-      "Tiered membership plans (Basic, Pro, Elite)",
-      "Image gallery and member results section",
-      "Free-trial booking and WhatsApp contact",
-      "Fully responsive and SEO optimized"
+      "Referral links that credit the partner and open a booking page for the brand",
+      "Partner portal with link and QR code, referral statuses, and payments",
+      "Admin console for partners, bookings, commissions, earnings, team, and audit",
+      "Booking slots pulled live from each manager's 8x Meets availability",
+      "Slack bot that posts each booking and threads every update under it",
+      "Signed payout webhook from the 8x payout gateway",
+      "MCP server with OAuth sign-in from claude.ai and hashed personal API keys",
+      "Scroll-driven GSAP story that follows one introduction from link to payout"
     ],
-    gradient: "from-yellow-500/20 to-amber-600/20",
-    borderColor: "border-yellow-500/50",
-    url: "https://atif-fitness-club.vercel.app",
+    gradient: "from-zinc-500/20 to-neutral-500/20",
+    borderColor: "border-zinc-400/50",
+    url: "https://8x-referral.vercel.app",
     featured: true,
-    slug: "atif-fitness",
-    image: "/projects/atif-fitness/main.png",
-    galleryCount: 4,
+    slug: "8x-referral",
+    image: "/projects/8x-referral/main.png",
+    galleryCount: 2,
     caseStudy: {
       overview:
-        "A modern, dark-themed marketing website for a Lahore gym, with services, membership plans, a gallery, and lead capture.",
+        "The B2B sibling of 8x Scout. It reuses the same attribution and commission core, and covers all 8x verticals (Social, LinkedIn, Research, Sales, Hiring).",
       problem:
-        "The gym needed a professional site to showcase its facilities and convert visitors into trials and memberships.",
+        "8x needed one programme where external partners could refer brands to any product, with bookings, manager handoffs, partner updates, and payouts handled without manual tracking.",
       build: [
-        "Bold hero and services overview with a gold-accented dark design.",
-        "Tiered membership plans (Basic, Pro, Elite) and a member results section.",
-        "Free-trial booking and WhatsApp contact for lead capture.",
-        "Fully responsive and SEO optimized.",
+        "An MCP server over Streamable HTTP with its own OAuth endpoints and per-key rate limiting, so managers can find, claim, assign, and update bookings from Claude.",
+        "MCP writes go through the same booking service as the admin UI, so stage rules, audit rows, commissions, and partner emails behave the same whichever way an update arrives.",
+        "Integration with the 8x Meets MCP server for live availability and scheduling, with encrypted per-manager tokens and a fixed-slot fallback.",
+        "Slack threaded booking alerts, Resend email templates, Google Meet OAuth, and a signed payout webhook feeding an outbox delivery service.",
       ],
-      impact: "A polished presence that drives trial bookings and membership inquiries.",
-      role: "Designer and developer, built with HTML, CSS, and JavaScript, deployed on Vercel.",
+      impact:
+        "Managers can work bookings from the admin console or directly from Claude, and partners are kept informed by email at each stage.",
+      role: "Full-stack developer: partner portal, admin console, booking flow, integrations, and MCP server.",
+    }
+  },
+  {
+    title: "8x Signals",
+    category: "Internal Tool / Lead Intelligence",
+    description: "Lead sourcing platform that finds companies showing buying intent (LinkedIn posts, Meta ads, App Store reviews, hiring and launches) and turns them into a deduplicated lead pool for each 8x product. Sales reps claim, qualify, and hand leads over to the 8x CRM from a keyboard-driven web app or from an AI client over MCP.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Prisma", "PostgreSQL", "Supabase", "Groq LLMs", "MCP + OAuth (jose)", "Vercel Cron"],
+    features: [
+      "Intent signals per product: UGC need, Meta ads, hiring, product friction, announcements",
+      "Staged pipeline: fetch, free rule filters, one cheap AI read, route, enrich, dedupe",
+      "Cross-product cascade: one company, keyed on domain, can be a lead for several products",
+      "App-review signal only fires when 3+ distinct reviews raise the same complaint",
+      "Website analyzer that grades a company's site and turns its flaws into a pitch opener",
+      "Claim/release, statuses, not-a-fit reasons, notes, and CRM handover checks",
+      "Keyboard-first lead queue with filters by ICP, signal, route, country, and product",
+      "MCP server with per-person OAuth: search, read, and claim leads from an AI client"
+    ],
+    gradient: "from-slate-500/20 to-gray-500/20",
+    borderColor: "border-slate-400/50",
+    url: null,
+    featured: true,
+    slug: "8x-signals",
+    image: "/projects/8x-signals/main.png",
+    galleryCount: 2,
+    caseStudy: {
+      overview:
+        "A standalone app that sources and qualifies intent-based leads for six 8x products and feeds them to the 8x Global CRM.",
+      problem:
+        "The CRM did no sourcing of its own and signal alerts were scattered across Slack. Sales needed one place to find, qualify, and route buyers for each product.",
+      build: [
+        "A staged pipeline (plan, search, classify, extract, enrich, route, backfill, hand over) where only fetch and enrich cost credits, with per-step cost tracked.",
+        "Groq model calls, logged to an ai_usage table, that extract company, country, and buying intent after free rule filters remove the noise.",
+        "A domain-keyed company model so one company can be a lead in several products while staying a single row, with dedupe per company per product.",
+        "An MCP server where the app is its own OAuth authorization server, so every AI-client call is tied to one person.",
+      ],
+      impact:
+        "Gives the sales team one deduplicated lead pool per product, sourced on a schedule and reachable from the web UI or an AI client.",
+      role: "Engineer on the project: scrapers, pipeline, UI, and MCP server, built against requirements from the sales lead.",
+    }
+  },
+  {
+    title: "Rislix GRC (R-Trax)",
+    category: "Compliance SaaS",
+    description: "Multi-tenant governance, risk, and compliance portal that Rislix uses to track its customers against frameworks such as ISO 27001, SOC 2, PCI DSS, and ISO 9001. Built by forking the source-available Fair TPRM platform, then rebranding and extending it with per-organisation tenancy, a client-specified RBAC model, a redesigned UI, and a threat-intelligence module, deployed on AWS.",
+    technologies: ["PHP 8", "MariaDB", "Apache + ModSecurity", "Docker", "AWS EC2", "Nginx", "Cloudflare", "GitHub Actions"],
+    features: [
+      "Separate database per customer organisation, with provisioning and decommission scripts",
+      "7-role RBAC built from the client's role-by-page matrix",
+      "Departments with per-record \"read assigned\" visibility scoping",
+      "Evidence library with review workflow and assigned reviewers",
+      "3x3 risk register with heatmap and residual scoring",
+      "Per-organisation branding, colours, and module toggles",
+      "In-app and email notifications, plus magic-link sign-in",
+      "Threat intel module (CISA KEV, NVD, HIBP, email posture checks)"
+    ],
+    gradient: "from-indigo-600/20 to-emerald-500/20",
+    borderColor: "border-indigo-500/50",
+    url: "https://rislix.com/trax/",
+    featured: true,
+    slug: "rislix",
+    image: "/projects/rislix/main.png",
+    galleryCount: 0,
+    caseStudy: {
+      overview:
+        "Rislix sells GRC services and needed a portal where each customer organisation tracks its own compliance. Rather than build from scratch, an existing GRC engine was adapted into a branded multi-tenant product.",
+      problem:
+        "Fair TPRM had a solid compliance engine but was single-tenant, centred on vendor risk, and had no role model matching how Rislix's clients work.",
+      build: [
+        "Chose one database per organisation over a tenant column, with provisioning, migrate-all, and decommission scripts around a central registry.",
+        "Implemented the client's 7-role RBAC matrix across 40+ SQL migrations, splitting \"read all\" from \"read assigned\", with shell test suites for RBAC and security.",
+        "Wrote a native multi-arch Dockerfile and tuned the stack to run on a small AWS instance behind Nginx and Cloudflare.",
+        "Added a redesigned UI kit, a 3x3 risk register, an evidence review workflow, notifications, magic links, and a threat-intel feed module.",
+      ],
+      impact:
+        "Live at rislix.com/trax, set up so each customer organisation can be onboarded independently.",
+      role: "Sole freelance developer. Forked and extended the Fair TPRM platform (whose core assessment engine is upstream), adding multi-tenancy, RBAC, the redesign, new modules, and the AWS deployment.",
+    }
+  },
+  {
+    title: "ilmVault for Institutions",
+    category: "EdTech / AI SaaS",
+    description: "Institutional version of the ilmVault AI reading coach for schools, universities, and training organisations. Each institution gets its own workspace with admin, teacher, and student roles. Students \"think first\" on assigned reading, the AI coaches and scores their reasoning across five lenses, and teachers review the evidence and build a Thinking Profile for each student.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "PostgreSQL", "Drizzle ORM", "Better Auth", "Vercel AI SDK", "Gemini / Claude / OpenAI", "Cloudflare R2"],
+    features: [
+      "Multi-tenant workspaces with super-admin, school admin, teacher, and student dashboards",
+      "Email invites, class groups, and subjects",
+      "Think First assignments built from 11 thinking techniques, with AI-generated questions",
+      "Understanding Checks with a secure fullscreen mode that logs integrity events",
+      "AI coach grounded in the assigned book, scoring answers 0-4 on five lenses",
+      "Teacher review queue with follow-ups, revision requests, and AI Understanding Reports",
+      "Guided learning paths: diagnostic, milestones, then assessments",
+      "Built-in PDF/EPUB reader with highlights and per-subject \"Ask\" chat"
+    ],
+    gradient: "from-emerald-500/20 to-green-500/20",
+    borderColor: "border-emerald-500/50",
+    url: "https://institute.ilmvault.ai",
+    featured: true,
+    slug: "ilmvault",
+    image: "/projects/ilmvault/main.png",
+    galleryCount: 2,
+    caseStudy: {
+      overview:
+        "A multi-tenant, institution-facing version of the ilmVault AI reading coach, letting schools run classes, assignments, and evidence-based assessment of student thinking on the same coaching engine.",
+      problem:
+        "In an AI-rich classroom a polished assignment says little. Schools need students to show real understanding of what they read, and teachers need structured, reviewable evidence rather than a general chatbot.",
+      build: [
+        "A tenancy and role layer (institution memberships, admin/teacher/student checks) that sits outside the existing coaching engine instead of forking it.",
+        "Roughly 100 Postgres tables across 10 Drizzle schema modules: institutions, subject vaults, assignments, guided learning, reading coach, reader, invitations, and AI.",
+        "A Thinking Assignments system: 11 techniques with per-technique Zod schemas, AI question generation with validation and repair, an AI job queue, and secure fullscreen checks.",
+        "A model registry across four AI providers, RAG retrieval grounded in the book text, answer guardrails, and speech-to-text for spoken answers.",
+      ],
+      impact:
+        "Live at institute.ilmvault.ai for a 10-institution pilot, giving teachers rubric-scored evidence of how each student reasons about assigned reading.",
+      role: "Sole developer: architecture, schema design, AI pipeline, full-stack implementation, and deployment.",
     }
   },
   {
